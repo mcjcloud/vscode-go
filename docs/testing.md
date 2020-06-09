@@ -32,6 +32,12 @@ To modify and rebuild the Docker container image, run:
 gcloud builds submit --config=build/cloudbuild.container.yaml
 ```
 
+Finally, you must set the project ID:
+
+```bash
+gcloud config set project vscode-go
+```
+
 ## Testing via GitHub Actions
 
 This is the workflow triggered for every PR and commit made to our mirror repository on GitHub, [github.com/golang/vscode-go](https://github.com/golang/vscode-go). We use this CI system to run tests on platforms that GCB does not yet support. This workflow is not triggered by CLs sent via Gerrit yet.
