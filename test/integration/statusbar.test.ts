@@ -63,9 +63,11 @@ describe('#setSelectedGo()', function () {
 
 	this.beforeEach(async () => {
 		goOption = await getSelectedGo();
+		console.log('get goOption: ', JSON.stringify(goOption));
 		sandbox = sinon.createSandbox();
 	});
 	this.afterEach(async () => {
+		console.log('set goOption: ', JSON.stringify(goOption));
 		await setSelectedGo(goOption, vscode.ConfigurationTarget.Workspace, false);
 		sandbox.restore();
 	});
